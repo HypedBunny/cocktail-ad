@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import Link from 'next/link';
 import { getAllCocktails, getSpiritData } from '@/lib/data';
 import CocktailCard from '@/components/CocktailCard';
@@ -64,7 +65,7 @@ export default function HomePage() {
 
           <div className="cocktail-grid">
             {featured.map((cocktail, i) => (
-              <>
+              <Fragment key={cocktail.id}>
                 {i === 2 && (
                   <AdUnit
                     key="featured-ad"
@@ -83,8 +84,8 @@ export default function HomePage() {
                     }}
                   />
                 )}
-                <CocktailCard key={cocktail.id} cocktail={cocktail} index={i > 1 ? i + 1 : i} />
-              </>
+                <CocktailCard cocktail={cocktail} index={i > 1 ? i + 1 : i} />
+              </Fragment>
             ))}
           </div>
 
