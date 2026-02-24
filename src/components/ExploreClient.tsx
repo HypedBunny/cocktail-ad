@@ -154,55 +154,57 @@ export default function ExploreClient({ cocktails }: Props) {
       `}</style>
 
             <div className="explore-layout">
-                {/* Filter Panel */}
-                <aside className="filter-panel">
-                    <FilterGroup
-                        title="Spirit"
-                        options={ALL_SPIRITS.filter(s => getCount('spirit', s) > 0)}
-                        selected={filters.spirits}
-                        category="spirit"
-                        onToggle={(v) => toggleFilter('spirits', v as Spirit)}
-                        getCount={getCount}
-                    />
-                    <FilterGroup
-                        title="Taste"
-                        options={ALL_TASTES}
-                        selected={filters.tastes}
-                        category="taste"
-                        onToggle={(v) => toggleFilter('tastes', v as TasteProfile)}
-                        getCount={getCount}
-                    />
-                    <FilterGroup
-                        title="Method"
-                        options={ALL_METHODS}
-                        selected={filters.methods}
-                        category="method"
-                        onToggle={(v) => toggleFilter('methods', v as PrepMethod)}
-                        getCount={getCount}
-                    />
-                </aside>
+                {/* Filter Panel + Ad */}
+                <div>
+                    <aside className="filter-panel">
+                        <FilterGroup
+                            title="Spirit"
+                            options={ALL_SPIRITS.filter(s => getCount('spirit', s) > 0)}
+                            selected={filters.spirits}
+                            category="spirit"
+                            onToggle={(v) => toggleFilter('spirits', v as Spirit)}
+                            getCount={getCount}
+                        />
+                        <FilterGroup
+                            title="Taste"
+                            options={ALL_TASTES}
+                            selected={filters.tastes}
+                            category="taste"
+                            onToggle={(v) => toggleFilter('tastes', v as TasteProfile)}
+                            getCount={getCount}
+                        />
+                        <FilterGroup
+                            title="Method"
+                            options={ALL_METHODS}
+                            selected={filters.methods}
+                            category="method"
+                            onToggle={(v) => toggleFilter('methods', v as PrepMethod)}
+                            getCount={getCount}
+                        />
+                    </aside>
 
-                {/* Filter Sidebar Ad */}
-                <div
-                    className="filter-panel"
-                    style={{
-                        marginTop: 'var(--space-lg)',
-                        position: 'sticky',
-                        top: 'calc(var(--nav-height) + var(--space-lg) + 500px)',
-                        gridColumn: '1',
-                        gridRow: '2',
-                    }}
-                >
-                    <AdUnit
-                        slot="7722092515"
-                        format="auto"
+                    {/* Sidebar Ad */}
+                    <div
                         style={{
-                            minHeight: '250px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
+                            marginTop: 'var(--space-lg)',
+                            background: 'var(--bg-secondary)',
+                            borderRadius: 'var(--radius-lg)',
+                            border: '1px solid var(--border-subtle)',
+                            padding: 'var(--space-lg)',
+                            overflow: 'hidden',
                         }}
-                    />
+                    >
+                        <AdUnit
+                            slot="7722092515"
+                            format="auto"
+                            style={{
+                                minHeight: '250px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                            }}
+                        />
+                    </div>
                 </div>
 
                 {/* Results */}
