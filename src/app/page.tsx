@@ -35,7 +35,7 @@ export default function HomePage() {
           </h1>
           <p>
             Explore an extraordinary collection of cocktail recipes from every
-            corner of the globe. Find your next favorite drink by region, spirit,
+            corner of the globe. Find your next favorite drink by spirit
             or taste.
           </p>
           <div className="hero-actions">

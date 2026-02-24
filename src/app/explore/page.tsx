@@ -4,9 +4,9 @@ import ExploreClient from '@/components/ExploreClient';
 import { Suspense } from 'react';
 
 export const metadata: Metadata = {
-    title: 'Explore Cocktails | Filter by Region, Spirit, Taste & Method',
+    title: 'Explore Cocktails | Filter by Spirit, Taste & Method',
     description:
-        'Browse and filter 400+ cocktail recipes by region, spirit, taste profile, and preparation method. Find your perfect drink.',
+        'Browse and filter 400+ cocktail recipes by spirit, taste profile, and preparation method. Find your perfect drink.',
 };
 
 export default function ExplorePage() {
@@ -20,7 +20,7 @@ export default function ExplorePage() {
                     <h1>Find Your Perfect Cocktail</h1>
                     <p>
                         Browse our collection of {cocktails.length} cocktails. Use the filters
-                        to narrow down by region, spirit, taste, or preparation method.
+                        to narrow down by spirit, taste, or preparation method.
                     </p>
                 </div>
             </section>
