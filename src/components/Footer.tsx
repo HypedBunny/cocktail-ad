@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ALL_SPIRITS, SPIRIT_SLUGS } from '@/lib/types';
+import AdUnit from '@/components/AdUnit';
 
 export default function Footer() {
     return (
@@ -36,6 +37,19 @@ export default function Footer() {
                             <li><Link href="/taste/bitter">Bitter & Bold</Link></li>
                             <li><Link href="/taste/fruity">Fruity</Link></li>
                         </ul>
+                    </div>
+
+                    <div className="footer-ad">
+                        <AdUnit
+                            slot="3778473495"
+                            format="auto"
+                            style={{
+                                minHeight: '200px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                            }}
+                        />
                     </div>
                 </div>
 

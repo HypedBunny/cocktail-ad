@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getAllCocktails, getSpiritData } from '@/lib/data';
 import CocktailCard from '@/components/CocktailCard';
+import AdUnit from '@/components/AdUnit';
 import RandomizerButton from '@/components/RandomizerButton';
 import SpiritGrid from '@/components/SpiritGrid';
 
@@ -63,7 +64,27 @@ export default function HomePage() {
 
           <div className="cocktail-grid">
             {featured.map((cocktail, i) => (
-              <CocktailCard key={cocktail.id} cocktail={cocktail} index={i} />
+              <>
+                {i === 2 && (
+                  <AdUnit
+                    key="featured-ad"
+                    slot="5287500865"
+                    format="auto"
+                    className="cocktail-card animate-in"
+                    style={{
+                      animationDelay: `${i * 0.05}s`,
+                      overflow: 'hidden',
+                      borderRadius: 'var(--radius-lg)',
+                      background: 'var(--bg-tertiary)',
+                      minHeight: '300px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  />
+                )}
+                <CocktailCard key={cocktail.id} cocktail={cocktail} index={i > 1 ? i + 1 : i} />
+              </>
             ))}
           </div>
 
