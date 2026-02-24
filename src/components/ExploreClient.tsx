@@ -225,24 +225,53 @@ function FilterGroup({
     onToggle: (value: string) => void;
     getCount: (category: string, value: string) => number;
 }) {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <div className="filter-group">
-            <h3 className="filter-group-title">{title}</h3>
-            {options.map(option => {
-                const count = getCount(category, option);
-                return (
-                    <label key={option} className="filter-option">
-                        <input
-                            type="checkbox"
-                            className="filter-checkbox"
-                            checked={selected.includes(option)}
-                            onChange={() => onToggle(option)}
-                        />
-                        <span className="filter-label">{option}</span>
-                        <span className="filter-count">{count}</span>
-                    </label>
-                );
-            })}
+            <button
+                type="button"
+                className="filter-group-title"
+                onClick={() => setIsOpen(!isOpen)}
+                style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    width: '100%',
+                    background: 'none',
+                    border: 'none',
+                    padding: 0,
+                    cursor: 'pointer',
+                    color: 'inherit',
+                    textAlign: 'left',
+                    fontFamily: 'inherit',
+                    fontSize: 'inherit',
+                    margin: 0,
+                    marginBottom: isOpen ? 'var(--space-md)' : 0
+                }}
+            >
+                {title}
+                <span style={{ fontSize: '0.8em', opacity: 0.6 }}>{isOpen ? '▲' : '▼'}</span>
+            </button>
+            {isOpen && (
+                <div style={{ maxHeight: '250px', overflowY: 'auto', paddingRight: '4px' }}>
+                    {options.map(option => {
+                        const count = getCount(category, option);
+                        return (
+                            <label key={option} className="filter-option">
+                                <input
+                                    type="checkbox"
+                                    className="filter-checkbox"
+                                    checked={selected.includes(option)}
+                                    onChange={() => onToggle(option)}
+                                />
+                                <span className="filter-label">{option}</span>
+                                <span className="filter-count">{count}</span>
+                            </label>
+                        );
+                    })}
+                </div>
+            )}
         </div>
     );
 }

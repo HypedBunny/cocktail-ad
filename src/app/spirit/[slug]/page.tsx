@@ -62,23 +62,10 @@ export default async function SpiritPage({ params }: Props) {
                 </div>
             </section>
 
-            <section className="section">
-                <div className="container">
-                    <p className="result-count">
-                        <strong>{cocktails.length}</strong> {spirit.toLowerCase()} cocktails
-                    </p>
-                    <CocktailGrid cocktails={cocktails} />
-                </div>
-            </section>
-
             {/* Cross-link to other spirits */}
-            <section className="section" style={{ background: 'var(--bg-secondary)' }}>
-                <div className="container">
-                    <div className="section-header">
-                        <span className="section-label">Explore More</span>
-                        <h2 className="section-title">Other Spirits</h2>
-                    </div>
-                    <div style={{ display: 'flex', gap: 'var(--space-md)', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <section className="section" style={{ background: 'var(--bg-secondary)', padding: 'var(--space-md) 0' }}>
+                <div className="container" style={{ textAlign: 'center' }}>
+                    <div style={{ display: 'flex', gap: 'var(--space-sm)', flexWrap: 'wrap', justifyContent: 'center' }}>
                         {ALL_SPIRITS.filter(s => s !== spirit && getCocktailsBySpirit(s).length > 0).slice(0, 8).map(s => (
                             <Link
                                 key={s}
@@ -91,6 +78,17 @@ export default async function SpiritPage({ params }: Props) {
                     </div>
                 </div>
             </section>
+
+            <section className="section">
+                <div className="container">
+                    <p className="result-count">
+                        <strong>{cocktails.length}</strong> {spirit.toLowerCase()} cocktails
+                    </p>
+                    <CocktailGrid cocktails={cocktails} />
+                </div>
+            </section>
+
+
         </>
     );
 }
