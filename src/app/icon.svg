@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <style>
+    .icon { fill: #000000; stroke: #000000; }
+    @media (prefers-color-scheme: dark) {
+      .icon { fill: #ffffff; stroke: #ffffff; }
+    }
+  </style>
+  <g class="icon">
+    <!-- Glass bowl -->
+    <polygon points="8,8 56,8 32,40" />
+    <!-- Stem -->
+    <rect x="30" y="40" width="4" height="14" />
+    <!-- Base -->
+    <rect x="18" y="54" width="28" height="4" rx="2" />
+    <!-- Olive pick -->
+    <line x1="44" y1="4" x2="38" y2="18" stroke-width="2.5" fill="none" />
+    <!-- Olive -->
+    <circle cx="38" cy="18" r="4" />
+  </g>
+</svg>
