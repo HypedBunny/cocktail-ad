@@ -133,6 +133,17 @@ export default async function CocktailPage({ params }: Props) {
 
                         {/* Instructions */}
                         <div>
+                            {cocktail.metaDescription && (
+                                <div style={{ marginBottom: 'var(--space-2xl)' }}>
+                                    <h2 className="recipe-section-title">
+                                        📖 About this Cocktail
+                                    </h2>
+                                    <p className="instructions-text" style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                                        {cocktail.metaDescription}
+                                    </p>
+                                </div>
+                            )}
+
                             <h2 className="recipe-section-title">
                                 📋 Instructions
                             </h2>
