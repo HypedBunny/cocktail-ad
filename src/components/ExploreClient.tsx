@@ -5,7 +5,6 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import type { Cocktail, FilterState, Spirit, TasteProfile, PrepMethod } from '@/lib/types';
 import { ALL_SPIRITS, ALL_TASTES, ALL_METHODS } from '@/lib/types';
 import CocktailCard from '@/components/CocktailCard';
-import AdUnit from '@/components/AdUnit';
 
 interface Props {
     cocktails: Cocktail[];
@@ -182,29 +181,6 @@ export default function ExploreClient({ cocktails }: Props) {
                             getCount={getCount}
                         />
                     </aside>
-
-                    {/* Sidebar Ad */}
-                    <div
-                        style={{
-                            marginTop: 'var(--space-lg)',
-                            background: 'var(--bg-secondary)',
-                            borderRadius: 'var(--radius-lg)',
-                            border: '1px solid var(--border-subtle)',
-                            padding: 'var(--space-lg)',
-                            overflow: 'hidden',
-                        }}
-                    >
-                        <AdUnit
-                            slot="7722092515"
-                            format="auto"
-                            style={{
-                                minHeight: '250px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                            }}
-                        />
-                    </div>
                 </div>
 
                 {/* Results */}

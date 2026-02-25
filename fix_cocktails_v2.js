@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const fs = require('fs');
 
 const data = JSON.parse(fs.readFileSync('./src/data/cocktails.json', 'utf-8'));

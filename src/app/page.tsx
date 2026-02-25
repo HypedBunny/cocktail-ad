@@ -15,7 +15,6 @@ export default function HomePage() {
   // Featured cocktails - pick diverse ones
   const featured = allCocktails
     .filter(c => c.imageUrl)
-    .sort(() => 0.5 - Math.random())
     .slice(0, 6);
 
   // Top spirits by count

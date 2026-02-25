@@ -23,6 +23,7 @@ export default function AdUnit({
     useEffect(() => {
         if (pushed.current) return;
         try {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
             pushed.current = true;
         } catch (e) {

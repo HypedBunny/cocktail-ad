@@ -6,6 +6,7 @@ import { SPIRIT_SLUGS } from '@/lib/types';
 import CocktailGrid from '@/components/CocktailGrid';
 import RecipeSchema from '@/components/RecipeSchema';
 import IngredientList from '@/components/IngredientList';
+import AdUnit from '@/components/AdUnit';
 
 interface Props {
     params: Promise<{ slug: string }>;
@@ -147,6 +148,25 @@ export default async function CocktailPage({ params }: Props) {
                             )}
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* Content Ad */}
+            <section className="section" style={{ paddingTop: 0, paddingBottom: 'var(--space-xl)' }}>
+                <div className="container">
+                    <AdUnit
+                        slot="3778473495"
+                        format="auto"
+                        style={{
+                            minHeight: '200px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            background: 'var(--bg-secondary)',
+                            borderRadius: 'var(--radius-lg)',
+                            overflow: 'hidden'
+                        }}
+                    />
                 </div>
             </section>
 
